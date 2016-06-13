@@ -10,7 +10,12 @@ body * {
   font-family: map-get($fonts, brand); 
   color: #fff;
   font-size: 30px;
-  padding-top: 10px;
+  top: 0px;
+  position: absolute;
+  @include respond-to(small) {
+    font-size: 20px;
+    top: 7px;
+  }
 }
 h1 {
   font-family: map-get($fonts, h1); // baselined font
