@@ -1,0 +1,40 @@
+//--- BASELINE GRID ---//
+$gridSize: 20px; // Define base size
+$gridDouble: 2*$gridSize;
+$gridTriple: 3*$gridSize;
+$gridQuartel: 4*$gridSize;
+
+//--- FONT FAMILIES ---//
+$latoLight: 'Lato_Light';
+$latoBold: 'Lato_Bold';
+$latoThin: 'Lato_Thin';
+$latoRegular: 'Lato_Regular';
+$monoSpaced: 'pt_monoregular';
+
+$fonts: (
+  h1: $latoLight,
+  brand: $latoRegular,
+  h2: $latoBold,
+  h3: $latoBold,
+  body: $latoLight,
+  a: $latoBold,
+  strong: $latoBold,
+  code: $monoSpaced,
+  navbtns: $latoBold
+);
+
+//--- COLORS ---//
+$grayCosmos: #313139;
+$grayMidnight: #464852;
+$grayDusk: #363840;
+$grayLight: #9da1b0;
+$grayMute: #b1b4c3;
+$yellowMustard: #f7ad35;
+$redOrange: orangered;
+$teal: #46beac;
+
+// Backgrounds
+$bgcolorBody: $grayMidnight;
+$bgcolorNav: $grayCosmos;
+
+

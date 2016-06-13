@@ -1,0 +1,185 @@
+@include baselineInit(
+  $container: 'body',
+  $selector: '.base',
+  $baselineFont: $latoLight
+);
+body * {
+  transition: all .15s;
+}
+.brand {
+  font-family: map-get($fonts, brand); 
+  color: #fff;
+  font-size: 30px;
+  padding-top: 10px;
+}
+h1 {
+  font-family: map-get($fonts, h1); // baselined font
+  margin-bottom: 4 * $gridSize; // margins should be mults of grid
+  margin-top: 3 * $gridSize; // margins should be mults of grid
+  @include baselineBlock(
+    $selector: '.base',
+    $lineHeight: 8*$gridSize,
+    $fontSize: 160px
+  );
+  text-align: center;
+  color: #fff;
+  @include respond-to(small) {
+    display: none;
+  }
+  @include respond-to(medium) {
+    @include baselineBlock(
+      $selector: '.base',
+      $lineHeight: 7*$gridSize,
+      $fontSize: 120px
+    );
+  }
+}
+h2 {
+  font-family: map-get($fonts, h2); // baselined font
+  margin-top: 3 * $gridSize; // margins should be mults of grid
+  @include baselineBlock(
+    $selector: '.base',
+    $lineHeight: (2*$gridSize),
+    $fontSize: 20px
+  );
+  text-align: center;
+  text-transform: uppercase;
+  @include respond-to(small) {
+    margin-top: 2 * $gridSize;
+    @include baselineBlock(
+      $selector: '.base',
+      $lineHeight: ($gridSize),
+      $fontSize: 16px
+    );
+  }
+}
+h3 {
+  font-family: map-get($fonts, h3); // baselined font
+  margin-bottom: 6 * $gridSize; // margins should be mults of grid
+  @include baselineBlock(
+    $selector: '.base',
+    $lineHeight: (3*$gridSize),
+    $fontSize: 50px
+  );
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: visible;
+  @include respond-to(small) {
+    margin-bottom: 4 * $gridSize;
+    margin-top: $gridSize;
+    @include baselineBlock(
+      $selector: '.base',
+      $lineHeight: (2*$gridSize),
+      $fontSize: 35px
+    );
+  }
+}
+h3 .base { /* Adding line underneath */
+  position: relative;
+}
+h3 .base:after { /* Adding line underneath */
+  content: '';
+  position: absolute;
+  left: 10%;
+  bottom: -40px;
+  width: 80%;
+  height: 4px;
+  background-color: #f7ad35;
+}
+main a {
+  text-decoration: none;
+  border-bottom: 3px solid $teal;
+  padding-bottom: 10px;
+  color: $teal;
+  font-family: map-get($fonts, a);
+  transition: .15s;
+  @include respond-to(small) {
+    border-bottom: none;
+  }
+}
+main a:hover {
+  border-color: #fff;
+  color: #fff
+}
+code {
+  font-family: map-get($fonts, code); // baselined font
+  @include baselineBlock(
+    $selector: '.base',
+    $lineHeight: ($gridSize),
+    $fontSize: 20px
+  );
+  display: block;
+}
+.txt-gray {
+  color: #ccc;
+}
+.txt-redorange {
+  color: orangered
+}
+.txt-teal {
+  color: $teal
+}
+ul {
+  margin-bottom: $gridSize; // margins should be mults of grid
+}
+p, li {
+  font-family: map-get($fonts, body); // baselined font
+  margin-bottom: $gridSize; // margins should be mults of grid
+  @include baselineBlock(
+    $selector: '.base',
+    $lineHeight: (2*$gridSize),
+    $fontSize: 24px
+  );
+  color: #e1e3ec;
+  @include respond-to(small) {
+    @include baselineBlock(
+      $selector: '.base',
+      $lineHeight: ($gridSize),
+      $fontSize: 16px
+    );
+  }
+}
+ol {
+  margin: $gridDouble 0 $gridDouble $gridTriple; // margins should be mults of grid
+}
+li:before {
+  content: '\25AA';
+  position: absolute;
+  margin-left: -$gridSize;
+  font-size: 24px;
+  margin-top: (2*$gridSize) - 25px;
+  @include respond-to(small) {
+    font-size: 16px;
+    margin-top: $gridSize - 16px;
+  }
+}
+li {
+  position: relative;
+  padding-left: $gridSize;
+}
+strong {
+  font-family: map-get($fonts, 'strong');
+  color: $yellowMustard
+}
+.single-out {
+  background: rgba(0,0,0,.3);
+  padding: .15em .6em .4em .6em;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 20px;
+  font-family: $latoBold;
+  @include respond-to(small) {
+    font-size: 15px;
+    padding: .01em .5em .3em .5em;
+  }
+}
+.small {
+  font-family: map-get($fonts, body); // baselined font
+  @include baselineBlock(
+    $selector: '.base',
+    $lineHeight: $gridSize,
+    $fontSize: 15px
+  );
+  margin-bottom: $gridSize
+}

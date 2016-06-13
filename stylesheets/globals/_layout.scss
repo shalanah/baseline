@@ -1,0 +1,44 @@
+body {
+  color: $grayMute;
+  padding: $gridTriple 0;
+  background-color: $bgcolorBody;
+  background-repeat: repeat-y;
+  background-size: 100% $gridSize;
+}
+.show-grid {
+  background-image: linear-gradient(to bottom, #000 0, rgba(255, 255, 255, 0)1px);
+}
+.container {
+  max-width: 1200px;
+  width: 80%;
+  min-width: 300px;
+  margin: 0 auto 0 auto;
+  padding: 0 $gridSize;
+}
+nav {
+  height: 40px;
+  background-color: $bgcolorNav;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  border-bottom: 1px solid darken($bgcolorNav, 5%);
+  box-shadow: 0 0px 20px rgba(0,0,0,.4);
+  overflow: auto;
+}
+#nav-btns {
+  float: right;
+  font-family: map-get($fonts, navbtns);
+  font-size: 15px;
+  margin-top: 10px;
+}
+nav .btn {
+  margin-left: 15px;
+  color: #fff;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    color: $teal;
+  }
+}

@@ -1,0 +1,20 @@
+@mixin baselineInit($container, $selector, $baselineFont){
+  #{$selector} {
+    line-height: 0;
+  }
+  #{$selector}:before {
+    content: '';
+    height: 1em;
+    display: inline-block;
+  }
+  #{$container} {
+    font-family: $baselineFont
+  }
+}
+
+@mixin baselineBlock($selector, $lineHeight, $fontSize) {
+  font-size: $lineHeight; // should be a multiple of grid
+  > #{$selector} {
+    font-size: $fontSize; // does not need to be a multiple of grid
+  }
+}

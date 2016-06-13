@@ -1,0 +1,28 @@
+{
+  "name": "baseline",
+  "version": "1.0.0",
+  "description": "Method for baselining text.",
+  "main": "index.html",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "keywords": [
+    "baseline",
+    "fonts",
+    "baseline",
+    "grid"
+  ],
+  "author": "Shalanah Dawson",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.1",
+    "prism-js": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}
