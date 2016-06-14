@@ -11,18 +11,6 @@ $latoThin: 'Lato_Thin';
 $latoRegular: 'Lato_Regular';
 $monoSpaced: 'pt_monoregular';
 
-$fonts: (
-  h1: $latoLight,
-  brand: $latoRegular,
-  h2: $latoBold,
-  h3: $latoBold,
-  body: $latoLight,
-  a: $latoBold,
-  strong: $latoBold,
-  code: $monoSpaced,
-  navbtns: $latoBold
-);
-
 //--- COLORS ---//
 $grayCosmos: #313139;
 $grayMidnight: #464852;
@@ -32,9 +20,37 @@ $grayMute: #b1b4c3;
 $yellowMustard: #f7ad35;
 $redOrange: orangered;
 $teal: #46beac;
+$blue: #0687df;
+$midnightblue: #00106d;
+$ltblue: #f0f7fe;
+$blue2: #0687df;
+
+$fonts: (
+  h1: $latoThin,
+  brand: $latoLight,
+  h2: $latoBold,
+  h3: $latoBold,
+  body: $latoLight,
+  a: $latoBold,
+  strong: $latoBold,
+  code: $monoSpaced,
+  navbtns: $latoRegular
+);
+
+$colors: (
+  h1: #999,
+  brand: #999,
+  h2: #999,
+  h3: #404040,
+  body: #404040,
+  a: $blue,
+  strong: #000,
+  code: #404040,
+  navbtns: #404040
+);
 
 // Backgrounds
-$bgcolorBody: $grayMidnight;
-$bgcolorNav: $grayCosmos;
+$bgcolorBody: #fff;
+$bgcolorNav: #fff;
 
 

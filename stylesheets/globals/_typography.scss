@@ -6,16 +6,8 @@
 body * {
   transition: all .15s;
 }
-.brand {
-  font-family: map-get($fonts, brand); 
-  color: #fff;
-  font-size: 30px;
-  top: 0px;
-  position: absolute;
-  @include respond-to(small) {
-    font-size: 20px;
-    top: 7px;
-  }
+body {
+  color: map-get($colors, body)
 }
 h1 {
   font-family: map-get($fonts, h1); // baselined font
@@ -26,8 +18,8 @@ h1 {
     $lineHeight: 8*$gridSize,
     $fontSize: 160px
   );
+  color: map-get($colors, h1);
   text-align: center;
-  color: #fff;
   @include respond-to(small) {
     display: none;
   }
@@ -40,6 +32,7 @@ h1 {
   }
 }
 h2 {
+  color: map-get($colors, h2);
   font-family: map-get($fonts, h2); // baselined font
   margin-top: 3 * $gridSize; // margins should be mults of grid
   @include baselineBlock(
@@ -59,6 +52,7 @@ h2 {
   }
 }
 h3 {
+  color: map-get($colors, h3);
   font-family: map-get($fonts, h3); // baselined font
   margin-bottom: 6 * $gridSize; // margins should be mults of grid
   @include baselineBlock(
@@ -67,12 +61,11 @@ h3 {
     $fontSize: 50px
   );
   text-align: center;
-  color: #fff;
   position: relative;
   overflow: visible;
   @include respond-to(small) {
-    margin-bottom: 4 * $gridSize;
-    margin-top: $gridSize;
+    margin-bottom: 3 * $gridSize;
+    margin-top: 0;
     @include baselineBlock(
       $selector: '.base',
       $lineHeight: (2*$gridSize),
@@ -90,45 +83,58 @@ h3 .base:after { /* Adding line underneath */
   bottom: -40px;
   width: 80%;
   height: 4px;
-  background-color: #f7ad35;
+  background-color: $blue;
+  @include respond-to(small) {
+    bottom: -20px;
+  }
 }
 main a {
+  color: map-get($colors, a);
   text-decoration: none;
-  border-bottom: 3px solid $teal;
+  border-bottom: 3px solid $blue;
   padding-bottom: 10px;
-  color: $teal;
   font-family: map-get($fonts, a);
   transition: .15s;
   @include respond-to(small) {
     border-bottom: none;
   }
+  &:hover {
+    border-color: $midnightblue;
+    color: $midnightblue;
+  }
 }
-main a:hover {
-  border-color: #fff;
-  color: #fff
+pre {
+  background-color: rgba(0, 156, 252, .05);
+  border-radius: 7px;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  overflow-x: scroll;
 }
 code {
+  color: map-get($colors, code);
   font-family: map-get($fonts, code); // baselined font
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
   @include baselineBlock(
     $selector: '.base',
-    $lineHeight: ($gridSize),
+    $lineHeight: (2*$gridSize),
     $fontSize: 20px
   );
-  display: block;
-}
-.txt-gray {
-  color: #ccc;
-}
-.txt-redorange {
-  color: orangered
-}
-.txt-teal {
-  color: $teal
+  @include respond-to(small) {
+    @include baselineBlock(
+      $selector: '.base',
+      $lineHeight: ($gridSize),
+      $fontSize: 14px
+    );
+  }
 }
 ul {
   margin-bottom: $gridSize; // margins should be mults of grid
 }
 p, li {
+  color: map-get($colors, body);
   font-family: map-get($fonts, body); // baselined font
   margin-bottom: $gridSize; // margins should be mults of grid
   @include baselineBlock(
@@ -136,7 +142,6 @@ p, li {
     $lineHeight: (2*$gridSize),
     $fontSize: 24px
   );
-  color: #e1e3ec;
   @include respond-to(small) {
     @include baselineBlock(
       $selector: '.base',
@@ -154,6 +159,7 @@ li:before {
   margin-left: -$gridSize;
   font-size: 24px;
   margin-top: (2*$gridSize) - 25px;
+  color: $blue;
   @include respond-to(small) {
     font-size: 16px;
     margin-top: $gridSize - 16px;
@@ -164,11 +170,11 @@ li {
   padding-left: $gridSize;
 }
 strong {
-  font-family: map-get($fonts, 'strong');
-  color: $yellowMustard
+  font-family: map-get($fonts, strong);
+  color: map-get($colors, strong)
 }
 .single-out {
-  background: rgba(0,0,0,.3);
+  background: rgba(0, 156, 252, .09);
   padding: .15em .6em .4em .6em;
   border-radius: 5px;
   white-space: nowrap;
@@ -187,4 +193,10 @@ strong {
     $fontSize: 15px
   );
   margin-bottom: $gridSize
+}
+.comment {
+  color: rgba(0,0,0,.3)
+}
+.txt-blue {
+  color: $blue;
 }

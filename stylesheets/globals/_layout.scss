@@ -6,7 +6,7 @@ body {
   background-size: 100% $gridSize;
 }
 .show-grid {
-  background-image: linear-gradient(to bottom, #000 0, rgba(255, 255, 255, 0)1px);
+  background-image: linear-gradient(to bottom, #0ff 0, rgba(255, 255, 255, 0)1px);
 }
 .container {
   max-width: 1200px;
@@ -14,31 +14,51 @@ body {
   min-width: 300px;
   margin: 0 auto 0 auto;
   padding: 0 $gridSize;
+  @include respond-to(small) { 
+    width: 92%;
+  }
 }
 nav {
-  height: 40px;
+  height: 60px;
   background-color: $bgcolorNav;
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   z-index: 10000;
-  border-bottom: 1px solid darken($bgcolorNav, 5%);
-  box-shadow: 0 0px 20px rgba(0,0,0,.4);
+  border-bottom: 3px solid darken($bgcolorNav, 10%);
   overflow: auto;
+  @include respond-to(small) {
+    height: 40px
+  }
 }
 #nav-btns {
   float: right;
   font-family: map-get($fonts, navbtns);
-  font-size: 15px;
-  margin-top: 10px;
+  font-size: 20px;
+  margin-top: 15px;
+  @include respond-to(small) { 
+    font-size: 14px;
+    margin-top: 10px;
+  }
 }
 nav .btn {
   margin-left: 15px;
-  color: #fff;
+  color: #aaa;  
   text-decoration: none;
   &:hover {
     cursor: pointer;
-    color: $teal;
+    color: $blue;
+  }
+}
+.brand {
+  font-family: map-get($fonts, brand);
+  color: map-get($colors, brand);
+  font-size: 40px;
+  top: 3px;
+  position: absolute;
+  @include respond-to(small) {
+    font-size: 20px;
+    top: 7px;
   }
 }

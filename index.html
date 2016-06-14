@@ -8,17 +8,17 @@
 <link href="./public/css/main.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<body>
+<body class="show-grid">
   <nav>
-    <div class="container"><span class="brand">BASE<span class="txt-teal">LINE</span></span>
+    <div class="container"><span class="brand">BASE<span class="txt-blue">LINE</span></span>
       <div id='nav-btns'>
-        <span id="toggle-grid" class="btn">Show grid</span>
+        <span id="toggle-grid" class="btn">Hide grid</span>
         <a href="https://github.com/shalanah/shalanah.github.io" target="_blank" class="btn">Github</a>
       </div>
     </div>
   </nav>
   <main class="container">
-    <h1><span class="base"><span>BASE</span><span class="txt-teal">LINE</span></span></h1>
+    <h1><span class="base"><span>BASE</span><span class="txt-blue">LINE</span></span></h1>
     <h2><span class="base">Baseline your fonts, not the&nbsp;web*.</span></h2>
     <h3><span class="base">Welcome typophiles.</span>
   </h3>
@@ -49,54 +49,54 @@
     <h3><span class="base">The Markup</span></h3>
     <p>
       <span class="base">For each block text element &ndash; h1, h2, h3, h4, p, etc &ndash; you will need an encapsulating inline-element.</span></p>
-    <pre><code class="language-markup">
-    &lt;p&gt; &#x3C;!-- Block element --&#x3E;
-      &lt;span class=&quot;base&quot;&gt; &#x3C;!-- Encapsulating inline-element --&#x3E;
+    <pre><code><span class="base">
+    &lt;p&gt; <span class="comment">&#x3C;!-- Block element --&#x3E;</span>
+      &lt;span class=&quot;base&quot;&gt; <span class="comment">&#x3C;!-- Encapsulating inline-element --&#x3E;</span>
           I'm not funny. What I am is brave. -Lucille Ball
       &lt;/span&gt;
     &lt;/p&gt;
-    </code></pre>
+    </span></code></pre>
     <h2><span class="base">Step 3.</span></h2>
     <h3><span class="base">The CSS</span></h3>
     <p>
       <span class="base">On the web, text is centered vertically within its line-height value. However, we want it to be vertically aligned with the bottom of the line-height. To achieve this, I use the&nbsp;<a href="http://blogs.adobe.com/webplatform/2014/08/13/one-weird-trick-to-baseline-align-text/" target="_blank">strut&nbsp;method</a>.</span>
     </p>
-    <pre><code class="language-scss">
-    /*--- 
+    <pre><code><span class="base">
+    <span class="comment">/*--- 
      One time set up... 
-     ---*/
+     ---*/</span>
     body {
-      font-family: &quot;Lato_Light&quot;; /* Baseline font for main container */
-      line-height: 1; /* Line-height matches set font-size */
+      font-family: &quot;Lato_Light&quot;; <span class="comment">/* Baseline font for main container */</span>
+      line-height: 1; <span class="comment">/* Line-height matches set font-size */</span>
     }
-    .base:before { /* Moving baseline (1em to match font-size of block, which is our line-height) */
+    .base:before { <span class="comment">/* Moving baseline (1em to match font-size of block, which is our line-height) */</span>
       content: &apos;&apos;;
       height: 1em;
       display: inline-block; 
     }
     .base {
-      line-height: 0; /* For good measure, removes extra space below baseline, in IE/FF */
+      line-height: 0; <span class="comment">/* For good measure, removes extra space below baseline, in IE/FF */</span>
     }
 
-    /*--- 
+    <span class="comment">/*--- 
      Sample text element, with grid=20px 
-     ---*/
+     ---*/</span>
     h1 {
-      font-family: &quot;Lato_Thin&quot;; /* Baselined font */
-      font-size: 80px; /* Acts as line-height (multiple of grid) */
-      margin-bottom: 40px; /* Vertical margins must be mutliple of grid */
+      font-family: &quot;Lato_Thin&quot;; <span class="comment">/* Baselined font */</span>
+      font-size: 80px; <span class="comment">/* Acts as line-height (multiple of grid) */</span>
+      margin-bottom: 40px; <span class="comment">/* Vertical margins must be mutliple of grid */</span>
     }
     h1 &gt; .base {
-      font-size: 70px; /* Font-size of text, does NOT need to be grid based */
+      font-size: 70px; <span class="comment">/* Font-size of text, does NOT need to be grid based */</span>
     }
-    </code></pre>
+    </span></code></pre>
     <h2><span class="base">BONUS!</span></h2>
     <h3><span class="base">SCSS Baseline Mixin</span></h3>
     <p>
       <span class="base">Two simple mixins to help abstract and use the CSS above: <span class='single-out'>baselineInit</span> and <span class='single-out'>baselineBlock</span>.</span>
     </p>
-    <pre><code class="language-scss">
-    @mixin baseTextInit($container, $selector, $baselineFont){
+    <pre><code><span class="base">
+    @mixin baseTextInit($container, $selector, $baselineFont) {
       #{$selector} {
         line-height: 0;
       }
@@ -111,31 +111,31 @@
     }
 
     @mixin baseTextBlock($selector, $lineHeight, $fontSize) {
-      font-size: $lineHeight; // should be a multiple of grid
+      font-size: $lineHeight; <span class="comment">// should be a multiple of grid</span>
       > #{$selector} {
-        font-size: $fontSize; // does not need to be a multiple of grid
+        font-size: $fontSize; <span class="comment">// does not need to be a multiple of grid</span>
       }
     }
-    </code></pre>
+    </span></code></pre>
     <p>
       <span class="base">Typography.scss is simplied the to...</span>
     </p>    
-    <pre><code class="language-scss">
-    @include baseTextInit( // one time set up
+    <pre><code class="language-scss"><span class="base">
+    @include baseTextInit( <span class="comment">// one time set up</span>
       $container: 'body',
       $selector: '.base'
       $baselineFont: 'Lato_Light'
     )
     h1 {
       font-family: &quot;Lato_Thin&quot;;
-      margin-bottom: 2 * 20px; // mutliple of grid
+      margin-bottom: 2 * 20px; <span class="comment">// mutliple of grid</span>
       @include baseText(
         $selector: '.base',
-        $lineHeight: 4 * 20px, // mutliple of grid
+        $lineHeight: 4 * 20px, <span class="comment">// mutliple of grid</span>
         $fontSize: 70px
       )
     }
-    </code></pre>
+    </span></code></pre>
     <h2><span class="base">Thanks!</span></h2>
     <h3><span class="base">Shout-outs</span></h3>
     <p><span class="base"><strong>FontSquirrel</strong>: I have to thank FontSquirrel for making such an awesome tool! Major props to them. I would also love to buy your merch if you sold <a href="http://www.sanmar.com/sanmar-servlets/CatalogBrowser?id=12013558&parentId=&catid=&top=Y&swatch=Vintage+Iris&av=0&prodimage=imglib/catl/2016/f4/AA5054_vintageiris_model_front_022016.jpg&imagesearch=yes" target="_blank">lady tanks in purple</a> (*hint, *hint)</span>
@@ -145,7 +145,6 @@
     <p><span class="base"><strong>White House Custom Colour</strong>: The projects I get to work on are interesting and complex. As a company, their committment to quality and technology inspired this investigation, and I am excited to use it on future products.</span>
     </p>
   </main>
-  <script src="public/js/prism.js"></script>
   <script src="public/js/main.js"></script>
 </body>
 
