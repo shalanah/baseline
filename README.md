@@ -3,11 +3,60 @@ Method for baselining fonts on the web.
 
 This method involves:
 - Baselining the fonts with [FontSquirrel Generator](https://www.fontsquirrel.com/tools/webfont-generator)
-- Markup
-- CSS (SCSS optional mixin as well)
+- Strut method <a href="http://blogs.adobe.com/webplatform/2014/08/13/one-weird-trick-to-baseline-align-text/" target="_blank">detailed by Alan Stearns.</a>
 
 View example and read more at: http://shalanah.github.io/baseline
 
-## Up and running
+## 1. Baseline font with FontSquirrel
+
+Essentially we are moving the baseline of the font, which typically sits somewhere in the middle of the em-square, to the absolute bottom of the em-square.
+
+- Go to [FontSquirrel Generator](https://www.fontsquirrel.com/tools/webfont-generator)
+- Click on "EXPERT..." mode
+- Under "Vertical Metrics", select Custom Alignment
+- Set your custom alignment to: **Ascent: 2048**, **Descent: 0**, **LineGap: 0**
+- Download your kit and include font files and relevent CSS.
+
+## 2. Markup
+```html
+<p> <!-- block text element -->
+  <span clas='base'> <!-- enscapsulating inline element -->
+    Text...
+  </span>
+</p>
+```
+
+## 3. CSS
+```css
+/*--- 
+ One time set up... 
+ ---*/
+body {
+  font-family: 'Lato_Light'; /* Baseline font for main container */
+  line-height: 1; /* Line-height matches set font-size */
+}
+.base:before { /* Moving baseline (1em to match font-size of block, which is our line-height) */
+  content: '';
+  height: 1em;
+  display: inline-block; 
+}
+.base {
+  line-height: 0; /* For good measure, removes extra space below baseline, in IE/FF */
+}
+
+/*--- 
+ Sample text element, with grid=20px 
+ ---*/
+h1 {
+  font-family: 'Lato_Thin'; /* Baselined font */
+  font-size: 80px; /* Acts as line-height (multiple of grid) */
+  margin-bottom: 40px; /* Vertical margins must be mutliple of grid */
+}
+h1 > .base {
+  font-size: 70px; /* Font-size of text, does NOT need to be grid based */
+}
+```
+
+### To take a look, download this repo then...
 1. Install dependencies with `npm install`
 2. Run `gulp` to create an updated `main.css`
