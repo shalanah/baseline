@@ -1,10 +1,6 @@
 # Baseline
 Method for baselining fonts on the web. 
 
-This method involves:
-- Baselining the fonts with [FontSquirrel Generator](https://www.fontsquirrel.com/tools/webfont-generator)
-- Strut method <a href="http://blogs.adobe.com/webplatform/2014/08/13/one-weird-trick-to-baseline-align-text/" target="_blank">detailed by Alan Stearns.</a>
-
 View example and read more at: http://shalanah.github.io/baseline
 
 ## 1. Baseline font with FontSquirrel
@@ -54,6 +50,48 @@ h1 {
 }
 h1 > .base {
   font-size: 70px; /* Font-size of text, does NOT need to be grid based */
+}
+```
+
+## BONUS! Sass mixin
+### Mixin
+```scss
+@mixin baseTextInit($container, $selector, $baselineFont) {
+  #{$selector} {
+    line-height: 0;
+  }
+  #{$selector}:before {
+    content: '';
+    height: 1em;
+    display: inline-block;
+  }
+  #{$container} {
+    font-family: $baselineFont
+  }
+}
+
+@mixin baseTextBlock($selector, $lineHeight, $fontSize) {
+  font-size: $lineHeight; // should be a multiple of grid
+  > #{$selector} {
+    font-size: $fontSize; // does not need to be a multiple of grid
+  }
+}
+```
+### Typography.scss
+```scss
+@include baseTextInit( // one time set up
+  $container: 'body',
+  $selector: '.base'
+  $baselineFont: 'Lato_Light'
+)
+h1 {
+  font-family: 'Lato_Thin';
+  margin-bottom: 2 * 20px; // mutliple of grid
+  @include baseText(
+    $selector: '.base',
+    $lineHeight: 4 * 20px, // mutliple of grid
+    $fontSize: 70px
+  )
 }
 ```
 
