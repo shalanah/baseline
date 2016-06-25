@@ -56,7 +56,7 @@ h1 > .base {
 ## BONUS! Sass mixin
 ### Mixin
 ```scss
-@mixin baseTextInit($container, $selector, $baselineFont) {
+@mixin baselineInit($container, $selector, $baselineFont) {
   #{$selector} {
     line-height: 0;
   }
@@ -70,7 +70,7 @@ h1 > .base {
   }
 }
 
-@mixin baseTextBlock($selector, $lineHeight, $fontSize) {
+@mixin baselineBlock($selector, $lineHeight, $fontSize) {
   font-size: $lineHeight; // should be a multiple of grid
   > #{$selector} {
     font-size: $fontSize; // does not need to be a multiple of grid
@@ -79,7 +79,7 @@ h1 > .base {
 ```
 ### Typography.scss
 ```scss
-@include baseTextInit( // one time set up
+@include baselineInit( // one time set up
   $container: 'body',
   $selector: '.base'
   $baselineFont: 'Lato_Light'
@@ -87,7 +87,7 @@ h1 > .base {
 h1 {
   font-family: 'Lato_Thin';
   margin-bottom: 2 * 20px; // mutliple of grid
-  @include baseText(
+  @include baseline(
     $selector: '.base',
     $lineHeight: 4 * 20px, // mutliple of grid
     $fontSize: 70px
@@ -95,6 +95,8 @@ h1 {
 }
 ```
 
-### To take a look, download this repo then...
-1. Install dependencies with `npm install`
-2. Run `gulp` to create an updated `main.css`
+### To see an example:
+- Dowload repo
+- View `master` branch
+- Install dependencies with `npm install`
+- Run `gulp` or `gulp styles` to create an updated `main.css`

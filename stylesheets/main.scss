@@ -1,10 +1,11 @@
 // Utilities (don't actual create css)
-@import "utils/utils";
+@import './baseline';
+@import './variables';
 
 // Resets
-@import "resets/resets";
+@import "./resets/resets";
 
 // Globals (create global css styles)
-@import 'globals/fontFamily';
-@import 'globals/layout';
-@import 'globals/typography';
+@import 'fontFamily';
+@import 'layout';
+@import 'typography';

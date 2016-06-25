@@ -1,0 +1,30 @@
+//--- BASELINE GRID ---//
+$gridSize: 20px; // Define base size
+$gridDouble: 2*$gridSize;
+$gridTriple: 3*$gridSize;
+$gridQuartel: 4*$gridSize;
+
+//--- FONT FAMILIES ---//
+$latoLight: 'Lato_Light';
+$latoBold: 'Lato_Bold';
+$latoThin: 'Lato_Thin';
+
+$fonts: (
+  h1: $latoThin,
+  h2: $latoBold,
+  h3: $latoBold,
+  body: $latoLight,
+);
+
+$colors: (
+  h1: #999,
+  h2: #999,
+  h3: #404040,
+  body: #404040,
+);
+
+// Backgrounds
+$bgcolorBody: #fff;
+$bgcolorNav: #fff;
+
+

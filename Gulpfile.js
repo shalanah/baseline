@@ -14,9 +14,6 @@ var sassOptions = {
 gulp.task('styles', function() {
   return gulp.src(input)
     .pipe(sass(sassOptions).on('error', sass.logError))
-    .pipe(sourcemaps.init())
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(sourcemaps.write())
     .pipe(autoprefixer())
     .pipe(gulp.dest(output))
 });

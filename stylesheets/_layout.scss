@@ -1,0 +1,13 @@
+body {
+  color: map-get($colors, body);
+  padding: $gridTriple $gridSize;
+  background-color: $bgcolorBody;
+  background-repeat: repeat-y;
+  background-size: 100% $gridSize;
+  background-image: linear-gradient(to bottom, #0ff 0, rgba(255, 255, 255, 0)1px);
+}
+main {
+  width: 90%;
+  max-width: 1500px;
+  margin: 0 auto;
+}

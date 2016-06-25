@@ -1,0 +1,58 @@
+// Baseline Init
+@include baselineInit(
+  $container: 'body',
+  $selector: '.base',
+  $baselineFont: $latoLight
+);
+
+// All vertical margins for text blocks should be multiples of the grid.
+h1 {
+  font-family: map-get($fonts, h1); // baselined font
+  margin-bottom: 4 * $gridSize;
+  margin-top: 3 * $gridSize;
+  color: map-get($colors, h1);
+  text-align: center;
+  @include baselineBlock(
+    $selector: '.base',
+    $lineHeight: 5*$gridSize,
+    $fontSize: 80px
+  );
+}
+h2 {
+  color: map-get($colors, h3);
+  font-family: map-get($fonts, h3); // baselined font
+  margin-top: 4 * $gridSize;
+  margin-bottom: 4 * $gridSize;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+  @include baselineBlock(
+    $selector: '.base',
+    $lineHeight: (3*$gridSize),
+    $fontSize: 55px
+  );
+}
+h3 {
+  color: map-get($colors, h2);
+  font-family: map-get($fonts, h2); // baselined font
+  margin-top: 3 * $gridSize;
+  margin-bottom: 3 * $gridSize;
+  text-align: center;
+  text-transform: uppercase;
+  @include baselineBlock(
+    $selector: '.base',
+    $lineHeight: (2*$gridSize),
+    $fontSize: 35px
+  );
+}
+p {
+  color: map-get($colors, body);
+  font-family: map-get($fonts, body); // baselined font
+  margin-bottom: $gridSize;
+  @include baselineBlock(
+    $selector: '.base',
+    $lineHeight: (2*$gridSize),
+    $fontSize: 24px
+  );
+}
+
