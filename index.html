@@ -96,7 +96,7 @@
       <span class="base">Two simple mixins to help abstract and use the CSS above: <span class='single-out'>baselineInit</span> and <span class='single-out'>baselineBlock</span>.</span>
     </p>
     <pre><code><span class="base">
-    @mixin baseTextInit($container, $selector, $baselineFont) {
+    @mixin baselineInit($container, $selector, $baselineFont) {
       #{$selector} {
         line-height: 0;
       }
@@ -110,7 +110,7 @@
       }
     }
 
-    @mixin baseTextBlock($selector, $lineHeight, $fontSize) {
+    @mixin baselineBlock($selector, $lineHeight, $fontSize) {
       font-size: $lineHeight; <span class="comment">// should be a multiple of grid</span>
       > #{$selector} {
         font-size: $fontSize; <span class="comment">// does not need to be a multiple of grid</span>
@@ -120,7 +120,7 @@
     <p>
       <span class="base">Typography.scss is simplied the to...</span>
     </p>    
-    <pre><code class="language-scss"><span class="base">  @include baseTextInit( <span class="comment">// one time set up</span>
+    <pre><code class="language-scss"><span class="base">  @include baselineInit( <span class="comment">// one time set up</span>
       $container: 'body',
       $selector: '.base'
       $baselineFont: 'Lato_Light'
@@ -128,7 +128,7 @@
     h1 {
       font-family: &quot;Lato_Thin&quot;;
       margin-bottom: 2 * 20px; <span class="comment">// mutliple of grid</span>
-      @include baseText(
+      @include baseline(
         $selector: '.base',
         $lineHeight: 4 * 20px, <span class="comment">// mutliple of grid</span>
         $fontSize: 70px
