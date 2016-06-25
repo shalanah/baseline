@@ -96,7 +96,7 @@ h1 > .base {
 h1 {
   font-family: 'Lato_Thin';
   margin-bottom: 2 * 20px; // mutliple of grid
-  @include baseline(
+  @include baselineBlock(
     $selector: '.base',
     $lineHeight: 4 * 20px, // mutliple of grid
     $fontSize: 70px
