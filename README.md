@@ -7,9 +7,12 @@ Method for baselining fonts on the web. View example and read more at: http://sh
 - View `index.html` in browser
 - Making edits to scss: run `gulp` or `gulp styles` to create an updated `main.css`
 
---------
 
-## 1. Baseline font with FontSquirrel
+----
+
+Steps run-down (also viewable at http://shalanah.github.io/baseline)
+
+### 1. Baseline font with FontSquirrel
 
 Essentially we are moving the baseline of the font, which typically sits somewhere in the middle of the em-square, to the absolute bottom of the em-square.
 
@@ -19,7 +22,7 @@ Essentially we are moving the baseline of the font, which typically sits somewhe
 - Set your custom alignment to: **Ascent: 2048**, **Descent: 0**, **LineGap: 0**
 - Download your kit and include font files and relevent CSS.
 
-## 2. Markup
+### 2. Markup
 ```html
 <p> <!-- block text element -->
   <span clas='base'> <!-- enscapsulating inline element -->
@@ -28,7 +31,7 @@ Essentially we are moving the baseline of the font, which typically sits somewhe
 </p>
 ```
 
-## 3. CSS
+### 3. CSS
 ```css
 /*--- 
  One time set up... 
@@ -59,8 +62,8 @@ h1 > .base {
 }
 ```
 
-## BONUS! Sass mixin
-### Mixin
+### Scss mixin
+#### Mixin
 ```scss
 @mixin baselineInit($container, $selector, $baselineFont) {
   #{$selector} {
@@ -83,7 +86,7 @@ h1 > .base {
   }
 }
 ```
-### Typography.scss
+#### Usage
 ```scss
 @include baselineInit( // one time set up
   $container: 'body',
