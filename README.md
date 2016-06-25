@@ -1,7 +1,13 @@
 # Baseline
-Method for baselining fonts on the web. 
+Method for baselining fonts on the web. View example and read more at: http://shalanah.github.io/baseline
 
-View example and read more at: http://shalanah.github.io/baseline
+## Downloading repo:
+- View `master` branch
+- Install dependencies with `npm install`
+- View `index.html` in browser
+- Making edits to scss: run `gulp` or `gulp styles` to create an updated `main.css`
+
+--------
 
 ## 1. Baseline font with FontSquirrel
 
@@ -94,9 +100,3 @@ h1 {
   )
 }
 ```
-
-### To see an example:
-- Dowload repo
-- View `master` branch
-- Install dependencies with `npm install`
-- Run `gulp` or `gulp styles` to create an updated `main.css`
