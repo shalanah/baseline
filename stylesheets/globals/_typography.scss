@@ -115,6 +115,7 @@ code {
   color: map-get($colors, code);
   font-family: map-get($fonts, code); // baselined font
   margin: 0;
+  padding: $gridSize 0;
   overflow-x: hidden;
   padding: 0;
   @include baselineBlock(
