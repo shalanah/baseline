@@ -43,7 +43,8 @@ body {
 .base:before { /* Moving baseline (1em to match font-size of block, which is our line-height) */
   content: '';
   height: 1em;
-  display: inline-block; 
+  display: inline-block;
+  font-size: 0; // So the "base" font-size does not interfer with the line-height --- good measure, especially for Firefox
 }
 .base {
   line-height: 0; /* For good measure, removes extra space below baseline, in IE/FF */
@@ -73,6 +74,7 @@ h1 > .base {
     content: '';
     height: 1em;
     display: inline-block;
+    font-size: 0; // So the "base" font-size does not interfer with the line-height --- good measure, especially for Firefox
   }
   #{$container} {
     font-family: $baselineFont

@@ -6,6 +6,7 @@
     content: '';
     height: 1em;
     display: inline-block;
+    font-size: 0; // So the "base" font-size does not interfer with the line-height --- good measure, especially for Firefox
   }
   #{$container} {
     font-family: $baselineFont
@@ -13,8 +14,8 @@
 }
 
 @mixin baselineBlock($selector, $lineHeight, $fontSize) {
-  font-size: $lineHeight; // should be a multiple of grid
+  font-size: $lineHeight; // Should be a multiple of grid
   > #{$selector} {
-    font-size: $fontSize; // does not need to be a multiple of grid
+    font-size: $fontSize; // Does not need to be a multiple of grid
   }
 }

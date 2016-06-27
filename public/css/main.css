@@ -93,6 +93,7 @@ main {
   content: '';
   height: 1em;
   display: inline-block;
+  font-size: 0;
 }
 
 body {
