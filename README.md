@@ -25,7 +25,7 @@ Essentially we are moving the baseline of the font, which typically sits somewhe
 ### 2. Markup
 ```html
 <p> <!-- block text element -->
-  <span clas='base'> <!-- enscapsulating inline element -->
+  <span class='base'> <!-- enscapsulating inline element -->
     Text...
   </span>
 </p>
