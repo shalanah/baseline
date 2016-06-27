@@ -49,8 +49,7 @@
     <h3><span class="base">The Markup</span></h3>
     <p>
       <span class="base">For each block text element &ndash; h1, h2, h3, h4, p, etc &ndash; you will need an encapsulating inline-element.</span></p>
-    <pre><code><span class="base">
-    &lt;p&gt; <span class="comment">&#x3C;!-- Block element --&#x3E;</span>
+    <pre><code><span class="base">    &lt;p&gt; <span class="comment">&#x3C;!-- Block element --&#x3E;</span>
       &lt;span class=&quot;base&quot;&gt; <span class="comment">&#x3C;!-- Encapsulating inline-element --&#x3E;</span>
           I'm not funny. What I am is brave. -Lucille Ball
       &lt;/span&gt;
@@ -61,8 +60,7 @@
     <p>
       <span class="base">On the web, text is centered vertically within its line-height value. However, we want it to be vertically aligned with the bottom of the line-height. To achieve this, I use the&nbsp;<a href="http://blogs.adobe.com/webplatform/2014/08/13/one-weird-trick-to-baseline-align-text/" target="_blank">strut&nbsp;method</a>.</span>
     </p>
-    <pre><code><span class="base">
-    <span class="comment">/*--- 
+    <pre><code><span class="base"><span class="comment">    /*--- 
      One time set up... 
      ---*/</span>
     body {
@@ -72,7 +70,8 @@
     .base:before { <span class="comment">/* Moving baseline (1em to match font-size of block, which is our line-height) */</span>
       content: &apos;&apos;;
       height: 1em;
-      display: inline-block; 
+      display: inline-block;
+      font-size: 0 <span class="comment">// So the "base" font-size does not interfer with the line-height --- good measure, especially for Firefox</span>
     }
     .base {
       line-height: 0; <span class="comment">/* For good measure, removes extra space below baseline, in IE/FF */</span>
@@ -95,8 +94,7 @@
     <p>
       <span class="base">Two simple mixins to help abstract and use the CSS above: <span class='single-out'>baselineInit</span> and <span class='single-out'>baselineBlock</span>.</span>
     </p>
-    <pre><code><span class="base">
-    @mixin baselineInit($container, $selector, $baselineFont) {
+    <pre><code><span class="base">    @mixin baselineInit($container, $selector, $baselineFont) {
       #{$selector} {
         line-height: 0;
       }
@@ -104,6 +102,7 @@
         content: '';
         height: 1em;
         display: inline-block;
+        font-size: 0 <span class="comment">// So the base fontsize does not interfer with the line-height --- good measure, especially for nested blocks and Firefox</span>
       }
       #{$container} {
         font-family: $baselineFont
@@ -133,7 +132,8 @@
         $lineHeight: 4 * 20px, <span class="comment">// mutliple of grid</span>
         $fontSize: 70px
       )
-    }</span></code></pre>
+    }
+    </span></code></pre>
     <h2><span class="base">Thanks!</span></h2>
     <h3><span class="base">Shout-outs</span></h3>
     <p><span class="base"><strong>FontSquirrel</strong>: I have to thank FontSquirrel for making such an awesome tool! Major props to them. I would also love to buy your merch if you sold <a href="http://www.sanmar.com/sanmar-servlets/CatalogBrowser?id=12013558&parentId=&catid=&top=Y&swatch=Vintage+Iris&av=0&prodimage=imglib/catl/2016/f4/AA5054_vintageiris_model_front_022016.jpg&imagesearch=yes" target="_blank">lady tanks in purple</a> (*hint, *hint)</span>
