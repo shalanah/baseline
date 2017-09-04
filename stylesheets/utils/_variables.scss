@@ -4,13 +4,6 @@ $gridDouble: 2*$gridSize;
 $gridTriple: 3*$gridSize;
 $gridQuartel: 4*$gridSize;
 
-//--- FONT FAMILIES ---//
-$latoLight: 'Lato_Light';
-$latoBold: 'Lato_Bold';
-$latoThin: 'Lato_Thin';
-$latoRegular: 'Lato_Regular';
-$monoSpaced: 'pt_monoregular';
-
 //--- COLORS ---//
 $grayCosmos: #313139;
 $grayMidnight: #464852;
@@ -26,15 +19,15 @@ $ltblue: #f0f7fe;
 $blue2: #0687df;
 
 $fonts: (
-  h1: $latoThin,
-  brand: $latoLight,
-  h2: $latoBold,
-  h3: $latoBold,
-  body: $latoLight,
-  a: $latoBold,
-  strong: $latoBold,
-  code: $monoSpaced,
-  navbtns: $latoRegular
+  h1: 'Lato',
+  brand: 'Lato',
+  h2: 'Lato',
+  h3: 'Lato',
+  body: 'Lato',
+  a: 'Lato',
+  strong: 'Lato',
+  code: 'Inconsolata',
+  navbtns: 'Lato'
 );
 
 $colors: (

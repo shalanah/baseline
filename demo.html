@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    /* Baselined font */
+    @font-face {
+      font-family: 'Baselined_Lato_Reg';
+      src: url('./public/fonts/lato-regular_baseline.woff2') format('woff2'), url('./public/fonts/lato-regular_baseline.woff') format('woff'), url('./public/fonts/lato-regular_baseline.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    /* Quick reset */
+    html, * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Show grid, with grid size 20px */
+    body {
+      padding: 40px 100px 100px; /* mult of grid */
+      background-repeat: repeat-y;
+      background-size: 100% 20px;
+      background-image: linear-gradient(to bottom, #0ff 0, rgba(255, 255, 255, 0)1px);
+    }
+    
+    /*
+      Setting block elements up
+    */
+    h1, h2, p { /* Can also use class instead of calling out each block element */
+      font-family: 'Baselined_Lato_Reg'; /* Baselined font only needed at block level */
+      line-height: 1em;
+    }
+    
+    /*
+      Setting inline elements up
+    */
+    h1 *, h2 *, p * { /* Can also use class instead of calling out each block element */
+      line-height: 0;
+    }
+    
+    /* 
+      Line-heights/our grid
+    */
+    h1 {
+      font-size: 80px; /* mult of grid, acts as line-height */
+      margin-bottom: 60px;
+      margin-top: 60px;
+    }
+    h2 {
+      font-size: 60px; /* mult of grid */
+      margin-bottom: 40px;
+    }
+    p {
+      font-size: 40px; /* mult of grid */
+      margin-bottom: 20px;
+    }
+    
+    /* 
+      Inline styles (lots of freedom)
+    */
+    h1 span {
+      font-size: 100px; /* Best if less than or equal to 2x the line-height */
+      font-family: Arial; /* Any font you want */
+    }
+    h2 span {
+      font-size: 70px; /* Best if less than or equal to 2x the line-height */
+      font-family: monospace; /* Any font you want */
+    }
+    p span:nth-of-type(1) {
+      font-size: 22px; /* Best if less than or equal to 2x the line-height */
+      font-family: Arial; /* Any font you want */
+    }
+    p span:nth-of-type(2) {
+      font-size: 41px; /* Best if less than or equal to 2x the line-height */
+      font-family: Cursive; /* Any font you want */
+    }
+    p span:nth-of-type(3) {
+      font-size: 20px; /* Best if less than or equal to 2x the line-height */
+      font-family: Comic Sans MS; /* Any font you want */
+    }
+    p span:nth-of-type(4) {
+      font-size: 55px; /* Best if less than or equal to 2x the line-height */
+      font-family: Tahoma; /* Any font you want */
+    }
+  </style>
+</head>
+<body>
+
+  <h1><span>Heading One</span></h1>
+  <h2><span>Heading Two</span></h2>
+  <p><span>One, </span><span>Two, </span><span>Three, </span><span>Four.</span></p>
+  <p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at dapibus tortor. In nec mauris condimentum, tempus erat quis, efficitur est. Nunc laoreet diam massa, vulputate feugiat lectus iaculis aliquam. Aenean ut cursus massa. Phasellus nec tempor velit. Integer vehicula congue ligula, in dapibus nisi condimentum quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non massa egestas, aliquam mi at, rhoncus ligula. Proin sed elit purus. Vivamus iaculis est lorem, in luctus ex porttitor ac. Mauris tincidunt malesuada justo in aliquam. Morbi id nisl sit amet ligula facilisis dignissim. Curabitur pulvinar velit ac finibus tempor. Donec imperdiet nunc vel mattis aliquam. Phasellus suscipit neque quam, non consequat nisi egestas maximus. Nunc finibus massa quis nulla vehicula condimentum.</span></p>
+  <p><span>Donec est ligula, dictum nec imperdiet ac, tempor finibus ipsum. Vivamus in congue velit, sed tempus mauris. Phasellus convallis sem lorem, vel semper massa rhoncus vel. Quisque mollis consequat feugiat. Cras ac mauris vel tellus interdum dignissim sit amet eu ipsum. Cras nunc turpis, viverra aliquet dictum eu, maximus et turpis. Aliquam porttitor ornare lectus vel aliquam. Pellentesque bibendum semper dictum. Phasellus tincidunt ullamcorper libero, eu elementum metus. Vestibulum dapibus urna nec nunc placerat, ut tempus arcu laoreet. In euismod risus vel lectus maximus, eget posuere dolor venenatis. Ut eu gravida nulla, quis congue leo. Ut maximus varius luctus. Mauris ut sem tellus.</span></p>
+  <h1><span>Heading One</span></h1>
+  <h2><span>Heading Two</span></h2>
+  <p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at dapibus tortor. In nec mauris condimentum, tempus erat quis, efficitur est. Nunc laoreet diam massa, vulputate feugiat lectus iaculis aliquam. Aenean ut cursus massa. Phasellus nec tempor velit. Integer vehicula congue ligula, in dapibus nisi condimentum quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non massa egestas, aliquam mi at, rhoncus ligula. Proin sed elit purus. Vivamus iaculis est lorem, in luctus ex porttitor ac. Mauris tincidunt malesuada justo in aliquam. Morbi id nisl sit amet ligula facilisis dignissim. Curabitur pulvinar velit ac finibus tempor. Donec imperdiet nunc vel mattis aliquam. Phasellus suscipit neque quam, non consequat nisi egestas maximus. Nunc finibus massa quis nulla vehicula condimentum.</span></p>
+  <p><span>Donec est ligula, dictum nec imperdiet ac, tempor finibus ipsum. Vivamus in congue velit, sed tempus mauris. Phasellus convallis sem lorem, vel semper massa rhoncus vel. Quisque mollis consequat feugiat. Cras ac mauris vel tellus interdum dignissim sit amet eu ipsum. Cras nunc turpis, viverra aliquet dictum eu, maximus et turpis. Aliquam porttitor ornare lectus vel aliquam. Pellentesque bibendum semper dictum. Phasellus tincidunt ullamcorper libero, eu elementum metus. Vestibulum dapibus urna nec nunc placerat, ut tempus arcu laoreet. In euismod risus vel lectus maximus, eget posuere dolor venenatis. Ut eu gravida nulla, quis congue leo. Ut maximus varius luctus. Mauris ut sem tellus.</span></p>
+  <h1><span>Heading One</span></h1>
+  <p><span>Donec est ligula, dictum nec imperdiet ac, tempor finibus ipsum. Vivamus in congue velit, sed tempus mauris. Phasellus convallis sem lorem, vel semper massa rhoncus vel. Quisque mollis consequat feugiat. Cras ac mauris vel tellus interdum dignissim sit amet eu ipsum. Cras nunc turpis, viverra aliquet dictum eu, maximus et turpis. Aliquam porttitor ornare lectus vel aliquam. Pellentesque bibendum semper dictum. Phasellus tincidunt ullamcorper libero, eu elementum metus. Vestibulum dapibus urna nec nunc placerat, ut tempus arcu laoreet. In euismod risus vel lectus maximus, eget posuere dolor venenatis. Ut eu gravida nulla, quis congue leo. Ut maximus varius luctus. Mauris ut sem tellus.</span></p>
+  <h2><span>Heading Two</span></h2>
+  <p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at dapibus tortor. In nec mauris condimentum, tempus erat quis, efficitur est. Nunc laoreet diam massa, vulputate feugiat lectus iaculis aliquam. Aenean ut cursus massa. Phasellus nec tempor velit. Integer vehicula congue ligula, in dapibus nisi condimentum quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent non massa egestas, aliquam mi at, rhoncus ligula. Proin sed elit purus. Vivamus iaculis est lorem, in luctus ex porttitor ac. Mauris tincidunt malesuada justo in aliquam. Morbi id nisl sit amet ligula facilisis dignissim. Curabitur pulvinar velit ac finibus tempor. Donec imperdiet nunc vel mattis aliquam. Phasellus suscipit neque quam, non consequat nisi egestas maximus. Nunc finibus massa quis nulla vehicula condimentum.</span></p>
+</body>
+</html>

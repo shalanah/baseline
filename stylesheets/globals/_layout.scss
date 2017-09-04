@@ -53,9 +53,10 @@ nav .btn {
 }
 .brand {
   font-family: map-get($fonts, brand);
+  font-weight: 300;
   color: map-get($colors, brand);
   font-size: 40px;
-  top: 3px;
+  top: 6px;
   position: absolute;
   @include respond-to(small) {
     font-size: 20px;
