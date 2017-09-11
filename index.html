@@ -20,7 +20,7 @@
   </nav>
   <main class="container">
     <h1 class="baseline"><span>BASE</span><span class="txt-blue">LINE</span></h1>
-    <h2 class="baseline"><span>Baseline a font, not the&nbsp;web.</span></h2>
+    <h2 class="baseline"><span>Creating vertical rhythm on the web</span></h2>
     <h3 class="baseline"><span>Welcome typophiles.</span>
   </h3>
 
@@ -28,9 +28,9 @@
       <span>If you truely need baseline in your web design, this is a very simple cross-browser friendly method with very little math. It is not font-dependent and you can even mix and match fonts within a paragraph. No searching through font metrics or tweaking CSS values by hand. No javascript or javascript dependencies needed. Use whatever units of measure you want: pts, pxs, rems... it's up to you.</span>
     </p>
     <h2 class="baseline"><span>Step 1.</span></h2>
-    <h3 class="baseline"><span>Create one baselined font</span></h3>
+    <h3 class="baseline"><span>Create or use a baseline font</span></h3>
     <p class="baseline">
-      <span>This task is pretty painless, thanks to FontSquirrel's awesome generator. You can also skip this whole task and use one of my baselined fonts in this repo.</span></p>
+      <span>This task is pretty painless, thanks to FontSquirrel's awesome generator. You can also skip this whole task and use my one character baselined utility font <a href='http://shalanah.github.io/baseline/BaselineEm.zip' target="_blank">Baseline Em</a>.</span></p>
     <p class="baseline"><span>Essentially we are shifting our em-height metrics such that our descender is not below our baseline.</span></p>
     <ul>
       <li class="baseline"><span>Go to <a href="https://www.fontsquirrel.com/tools/webfont-generator" target="_blank">FontSquirrel Generator</a></span></li>
@@ -49,24 +49,24 @@
       <span>For each block text element &ndash; h1, h2, h3, h4, p, etc &ndash; you will need an encapsulating inline-element.</span></p>
     <pre class="baseline"><code><span>    &lt;p&gt; <span class="comment">&#x3C;!-- Block element --&#x3E;</span>
       &lt;span&gt; <span class="comment">&#x3C;!-- Encapsulating inline-element --&#x3E;</span>
-          I'm not funny. What I am is brave. -Lucille Ball
+          Leave it better than you found it. -Robert Baden-Powell
       &lt;/span&gt;
     &lt;/p&gt;
     </span></code></pre>
     <h2 class="baseline"><span>Step 3.</span></h2>
     <h3 class="baseline"><span>The CSS</span></h3>
     <p class="baseline">
-      <span>To acheive vertical rhythm, we want our fonts to sit at the bottom of our line-height. We use our baselined font for any block element and set it's line-height and font-size to a mutliple of the grid. Since this font has been baselined, all subsequent spans will line up with its baseline. To make sure the inline elements' inline boxes do not interfer with our line box, we set our inline element's line-heights to 0.</span>
+      <span>To acheive vertical rhythm and leading on the web, we want our fonts to sit at the bottom of our line-height. We set our block's font size to a multiple of the grid and the line-height to match it. Using our baselined font on the block-level element will force our baselines to the bottom of our line-height. Then we collapse the line-height (setting it to zero) of any text within our inline element. Set your inline elements to whatever font or font-size you'd like.</span>
     </p>
-    <pre class="baseline"><code><span>  p {
-      font-family: &quot;Baselined font&quot;; <span class="comment">/* Baseline font for block containers */</span>
+    <pre class="baseline"><code><span>    p {
+      font-family: &quot;Baseline Em&quot;; <span class="comment">/* Baseline font for block containers */</span>
       font-size: 40px; <span class="comment">/* Multiple of your grid */</span>
       line-height: 1em; <span class="comment">/* Line-height matches set font-size */</span>
     }
     p * {
       line-height: 0; <span class="comment">/* Collapses our inline box so our line box is our strut from the paragraph */</span>
     }
-    span {
+    p span {
       font-family: Anything you want here;
       font-size: Anything you want here; <span class="comment">/* works best if less than 2x your block's line-height */</span> 
     }

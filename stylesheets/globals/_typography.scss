@@ -4,12 +4,12 @@ body * {
 
 body {
   color: map-get($colors, body);
-  font-family: Baselined_Lato_Reg; // Baselined font on all elements
+  font-family: Baseline Em; // Baselined font on all elements
 }
 
 .baseline {
   line-height: 1;
-  font-family: Baselined_Lato_Reg; // Baselined font on all elements
+  font-family: Baseline Em; // Baselined font on all elements
 }
 .baseline span {line-height: 0;}
 
