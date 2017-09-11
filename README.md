@@ -5,7 +5,7 @@ Created by Shalanah Dawson
 
 - How to use: http://shalanah.github.io/baseline 
 - Basic demo: http://shalanah.github.io/baseline/demo.html
-- Download a baselined font: http://shalanah.github.io/baseline/BaselineEm.zip
+- Download a baselined font: https://github.com/shalanah/baseline/tree/master/BaselineEm
 
 ## Stay tuned
 Will have a full write-up with diagrams of how this works.
