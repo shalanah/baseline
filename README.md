@@ -3,8 +3,8 @@ Method for baselining fonts/text to acheive vertical rhythm on the web. No JS or
 
 Created by Shalanah Dawson
 
+- Basic demo: https://codepen.io/shalanah/pen/RyEOEO
 - How to use: http://shalanah.github.io/baseline 
-- Basic demo: http://shalanah.github.io/baseline/demo.html
 - Download a baselined font: https://github.com/shalanah/baseline/tree/master/BaselineEm
 
 ## Stay tuned
