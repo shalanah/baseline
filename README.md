@@ -6,6 +6,4 @@ Created by Shalanah Dawson
 - Basic demo: https://codepen.io/shalanah/pen/RyEOEO
 - How to use: http://shalanah.github.io/baseline 
 - Download a baselined font: https://github.com/shalanah/baseline/tree/master/BaselineEm
-
-## Stay tuned
-Will have a full write-up with diagrams of how this works.
+- Video explanation: https://www.youtube.com/watch?v=dEzZF6LSTA0
